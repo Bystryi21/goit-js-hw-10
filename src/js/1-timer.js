@@ -1,5 +1,12 @@
-// Описаний в документації
 import flatpickr from 'flatpickr';
-// Додатковий імпорт стилів
+
 import 'flatpickr/dist/flatpickr.min.css';
-console.log(flatpickr); // Додайте цей рядок, щоб перевірити, чи правильно імпортовано бібліотеку
+console.log(flatpickr);
+import 'izitoast/dist/css/iziToast.min.css';
+import iziToast from 'izitoast';
+
+// Приклад використання для показу сповіщення
+iziToast.show({
+  title: 'Hello',
+  message: 'This is iziToast!',
+});
