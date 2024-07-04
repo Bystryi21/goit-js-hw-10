@@ -45,7 +45,8 @@ function updateTimer(endTime) {
     hoursElement.textContent = '00';
     minutesElement.textContent = '00';
     secondsElement.textContent = '00';
-    startButton.disabled = false;
+    datetimePicker.disabled = false;
+    startButton.disabled = true;
     return;
   }
   const { days, hours, minutes, seconds } = convertMs(total);
@@ -57,6 +58,7 @@ function updateTimer(endTime) {
 
 startButton.addEventListener('click', function () {
   startButton.disabled = true;
+  datetimePicker.disabled = true;
   const selectedDate = flatpickr.parseDate(datetimePicker.value, 'Y-m-d H:i:S');
   if (!selectedDate) return;
 
@@ -67,6 +69,7 @@ startButton.addEventListener('click', function () {
       message: 'Please choose a date in the future',
     });
     startButton.disabled = true;
+    datetimePicker.disabled = false;
     return;
   }
 
